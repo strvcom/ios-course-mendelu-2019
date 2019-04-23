@@ -19,7 +19,12 @@ class PhotoDescriptionTableViewCell: UITableViewCell, NibNameIdentifiable {
     @IBOutlet private weak var descriptionLabel: UILabel!
 
     func configure(with input: Input) {
-        likesCountLabel.text = "\(input.likesCount) To se mi líbí"
+        let formatter = NumberFormatter()
+        formatter.usesGroupingSeparator = true
+        formatter.groupingSize = 3
+        formatter.groupingSeparator = " "
+        let formattedLikesCount = formatter.string(from: NSNumber(integerLiteral: input.likesCount)) ?? "\(input.likesCount)"
+        likesCountLabel.text = "\(formattedLikesCount) To se mi líbí"
         let username = NSAttributedString(string: input.username, attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 13, weight: .semibold)])
         let description = NSAttributedString(string: " \(input.description)", attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 13, weight: .regular)])
         let attributedText = NSMutableAttributedString()
