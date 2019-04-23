@@ -11,6 +11,12 @@ class PhotoDetailViewController: UIViewController {
 
     var photo: Photo!
 
+    enum Section: Int, CaseIterable {
+        case photo
+        case description
+        case comments
+    }
+
     @IBOutlet private weak var tableView: UITableView!
 
     override func viewDidLoad() {
@@ -32,21 +38,34 @@ private extension PhotoDetailViewController {
         tableView.dataSource = self
     }
 
+    func section(at index: Int) -> Section {
+        guard let section = Section(rawValue: index) else {
+            fatalError("invalid section")
+        }
+        return section
+    }
+
 }
 
 extension PhotoDetailViewController: UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return Section.allCases.count
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return section <= 1 ? 1 : photo.comments.count
+        switch self.section(at: section) {
+        case .photo, .description:
+            return 1
+        case .comments:
+            return photo.comments.count
+        }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.section {
-        case 0:
+        let section = self.section(at: indexPath.section)
+        switch section {
+        case .photo:
             let cell = tableView.dequeueReusableCell(withIdentifier: PhotoTableViewCell.identifier, for: indexPath) as! PhotoTableViewCell
             cell.configure(
                 with: PhotoTableViewCell.Input(
@@ -57,7 +76,7 @@ extension PhotoDetailViewController: UITableViewDataSource {
                 )
             )
             return cell
-        case 1:
+        case .description:
             let cell = tableView.dequeueReusableCell(withIdentifier: PhotoDescriptionTableViewCell.identifier, for: indexPath) as! PhotoDescriptionTableViewCell
             cell.configure(
                 with: PhotoDescriptionTableViewCell.Input(
@@ -67,7 +86,7 @@ extension PhotoDetailViewController: UITableViewDataSource {
                 )
             )
             return cell
-        case 2:
+        case .comments:
             let comment = photo.comments[indexPath.row]
             let cell = tableView.dequeueReusableCell(withIdentifier: CommentTableViewCell.identifier, for: indexPath) as! CommentTableViewCell
             cell.configure(
@@ -78,8 +97,6 @@ extension PhotoDetailViewController: UITableViewDataSource {
                 )
             )
             return cell
-        default:
-            fatalError("invalid section")
         }
     }
 
