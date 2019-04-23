@@ -7,10 +7,7 @@
 
 import UIKit
 
-class PhotoTableViewCell: UITableViewCell {
-
-    static let cellHeight: CGFloat = 430
-    static let reuseIdentifier = String(describing: PhotoTableViewCell.self)
+class PhotoTableViewCell: UITableViewCell, NibNameIdentifiable {
 
     struct Input {
         let avatar: UIImage
@@ -26,12 +23,13 @@ class PhotoTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+
         selectionStyle = .none
         avatarImageView.layer.masksToBounds = true
         avatarImageView.layer.cornerRadius = avatarImageView.frame.width / 2
     }
 
-    func configure(input: Input) {
+    func configure(with input: Input) {
         avatarImageView.image = input.avatar
         authorNameLabel.text = input.authorName
         locationNameLabel.text = input.locationName

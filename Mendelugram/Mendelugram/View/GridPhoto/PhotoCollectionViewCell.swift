@@ -7,21 +7,15 @@
 
 import UIKit
 
-class PhotoCollectionViewCell: UICollectionViewCell {
-
-    static let reuseIdentifier = String(describing: PhotoCollectionViewCell.self)
+class PhotoCollectionViewCell: UICollectionViewCell, NibNameIdentifiable {
 
     struct Input {
         let photo: UIImage
     }
 
-    @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet private weak var photoImageView: UIImageView!
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-
-    func configure(input: Input) {
+    func configure(with input: Input) {
         photoImageView.image = input.photo
     }
 

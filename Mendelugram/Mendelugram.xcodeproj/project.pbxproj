@@ -34,6 +34,7 @@
 		A5130A0B226CECA800027FEF /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5130A09226CECA800027FEF /* CommentTableViewCell.xib */; };
 		A5130A0F226CF36000027FEF /* PhotoDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5130A0D226CF36000027FEF /* PhotoDescriptionTableViewCell.swift */; };
 		A5130A10226CF36000027FEF /* PhotoDescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5130A0E226CF36000027FEF /* PhotoDescriptionTableViewCell.xib */; };
+		A5467AC5226EFC4E004ABA0E /* NibNameIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5467AC4226EFC4E004ABA0E /* NibNameIdentifiable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		A5130A09226CECA800027FEF /* CommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
 		A5130A0D226CF36000027FEF /* PhotoDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		A5130A0E226CF36000027FEF /* PhotoDescriptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoDescriptionTableViewCell.xib; sourceTree = "<group>"; };
+		A5467AC4226EFC4E004ABA0E /* NibNameIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibNameIdentifiable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +174,7 @@
 			children = (
 				A51309E9226B58AA00027FEF /* Navigation */,
 				A51309E1226B4C3D00027FEF /* Extension */,
+				A5467AC3226EFC3A004ABA0E /* Protocol */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -248,6 +251,14 @@
 				A5130A0E226CF36000027FEF /* PhotoDescriptionTableViewCell.xib */,
 			);
 			path = PhotoDescription;
+			sourceTree = "<group>";
+		};
+		A5467AC3226EFC3A004ABA0E /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				A5467AC4226EFC4E004ABA0E /* NibNameIdentifiable.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,6 +350,7 @@
 				A51309F8226C738400027FEF /* PhotoTableViewCell.swift in Sources */,
 				A51309EE226B64A300027FEF /* PhotoService.swift in Sources */,
 				A5130A0F226CF36000027FEF /* PhotoDescriptionTableViewCell.swift in Sources */,
+				A5467AC5226EFC4E004ABA0E /* NibNameIdentifiable.swift in Sources */,
 				A5130A0A226CECA800027FEF /* CommentTableViewCell.swift in Sources */,
 				A51309F5226B66DD00027FEF /* Comment.swift in Sources */,
 				A51309FF226CA1CE00027FEF /* PhotoCollectionViewCell.swift in Sources */,

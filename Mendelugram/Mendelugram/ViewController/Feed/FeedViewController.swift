@@ -19,16 +19,24 @@ class FeedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.rowHeight = PhotoTableViewCell.cellHeight
-        tableView.register(UINib(nibName: PhotoTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: PhotoTableViewCell.reuseIdentifier)
-        tableView.delegate = self
-        tableView.dataSource = self
+        configure()
 
         // 💩 duplicitní kód z GridViewController
         photoService.fetchPhotos { [weak self] photos in
             self?.photos = photos
             self?.tableView.reloadData()
         }
+    }
+
+}
+
+private extension FeedViewController {
+
+    func configure() {
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.register(PhotoTableViewCell.nib, forCellReuseIdentifier: PhotoTableViewCell.identifier)
+        tableView.delegate = self
+        tableView.dataSource = self
     }
 
 }
@@ -41,10 +49,10 @@ extension FeedViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let photo = photos[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: PhotoTableViewCell.reuseIdentifier, for: indexPath) as! PhotoTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: PhotoTableViewCell.identifier, for: indexPath) as! PhotoTableViewCell
         cell.configure(
             // 💩 FeedViewController musí umět přetavit Photo na Input pro PhotoTableViewCell
-            input: PhotoTableViewCell.Input(
+            with: PhotoTableViewCell.Input(
                 avatar: UIImage(avatarId: photo.author.avatarId),
                 authorName: photo.author.name,
                 locationName: photo.locationName,

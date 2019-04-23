@@ -11,17 +11,24 @@ class PhotoDetailViewController: UIViewController {
 
     var photo: Photo!
 
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        configure()
+    }
+
+}
+
+private extension PhotoDetailViewController {
+
+    func configure() {
         title = "\(photo.author.username)'s photo"
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.register(UINib(nibName: PhotoTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: PhotoTableViewCell.reuseIdentifier)
-        tableView.register(UINib(nibName: CommentTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: CommentTableViewCell.reuseIdentifier)
-        tableView.register(UINib(nibName: PhotoDescriptionTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: PhotoDescriptionTableViewCell.reuseIdentifier)
-        tableView.delegate = self
+        tableView.register(PhotoTableViewCell.nib, forCellReuseIdentifier: PhotoTableViewCell.identifier)
+        tableView.register(CommentTableViewCell.nib, forCellReuseIdentifier: CommentTableViewCell.identifier)
+        tableView.register(PhotoDescriptionTableViewCell.nib, forCellReuseIdentifier: PhotoDescriptionTableViewCell.identifier)
         tableView.dataSource = self
     }
 
@@ -40,9 +47,9 @@ extension PhotoDetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: PhotoTableViewCell.reuseIdentifier, for: indexPath) as! PhotoTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: PhotoTableViewCell.identifier, for: indexPath) as! PhotoTableViewCell
             cell.configure(
-                input: PhotoTableViewCell.Input(
+                with: PhotoTableViewCell.Input(
                     avatar: UIImage(avatarId: photo.author.avatarId),
                     authorName: photo.author.name,
                     locationName: photo.locationName,
@@ -51,9 +58,9 @@ extension PhotoDetailViewController: UITableViewDataSource {
             )
             return cell
         case 1:
-            let cell = tableView.dequeueReusableCell(withIdentifier: PhotoDescriptionTableViewCell.reuseIdentifier, for: indexPath) as! PhotoDescriptionTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: PhotoDescriptionTableViewCell.identifier, for: indexPath) as! PhotoDescriptionTableViewCell
             cell.configure(
-                input: PhotoDescriptionTableViewCell.Input(
+                with: PhotoDescriptionTableViewCell.Input(
                     likesCount: photo.likesCount,
                     username: photo.author.username,
                     description: photo.description
@@ -62,9 +69,9 @@ extension PhotoDetailViewController: UITableViewDataSource {
             return cell
         case 2:
             let comment = photo.comments[indexPath.row]
-            let cell = tableView.dequeueReusableCell(withIdentifier: CommentTableViewCell.reuseIdentifier, for: indexPath) as! CommentTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: CommentTableViewCell.identifier, for: indexPath) as! CommentTableViewCell
             cell.configure(
-                input: CommentTableViewCell.Input(
+                with: CommentTableViewCell.Input(
                     avatar: UIImage(avatarId: comment.author.avatarId),
                     username: comment.author.username,
                     comment: comment.text
@@ -77,5 +84,3 @@ extension PhotoDetailViewController: UITableViewDataSource {
     }
 
 }
-
-extension PhotoDetailViewController: UITableViewDelegate {}

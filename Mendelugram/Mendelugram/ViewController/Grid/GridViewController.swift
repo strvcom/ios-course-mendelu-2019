@@ -19,6 +19,20 @@ class GridViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        configure()
+
+        // 💩 duplicitní kód z FeedViewController
+        photoService.fetchPhotos { [weak self] photos in
+            self?.photos = photos
+            self?.collectionView.reloadData()
+        }
+    }
+
+}
+
+private extension GridViewController {
+
+    func configure() {
         let photosPerRow = 3
         let side = (Int(UIScreen.main.bounds.width) / photosPerRow) - 1
         if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
@@ -27,15 +41,9 @@ class GridViewController: UIViewController {
             layout.minimumInteritemSpacing = 1
         }
 
-        collectionView.register(UINib(nibName: PhotoCollectionViewCell.reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: PhotoCollectionViewCell.reuseIdentifier)
+        collectionView.register(PhotoCollectionViewCell.nib, forCellWithReuseIdentifier: PhotoCollectionViewCell.identifier)
         collectionView.delegate = self
         collectionView.dataSource = self
-
-        // 💩 duplicitní kód z FeedViewController
-        photoService.fetchPhotos { [weak self] photos in
-            self?.photos = photos
-            self?.collectionView.reloadData()
-        }
     }
 
 }
@@ -48,9 +56,9 @@ extension GridViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let photo = photos[indexPath.row]
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.reuseIdentifier, for: indexPath) as! PhotoCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.identifier, for: indexPath) as! PhotoCollectionViewCell
         cell.configure(
-            input: PhotoCollectionViewCell.Input(
+            with: PhotoCollectionViewCell.Input(
                 // 💩 GridViewController musí umět přetavit photoId na UIImage
                 photo: UIImage(photoId: photo.photoId)
             )

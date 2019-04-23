@@ -7,9 +7,7 @@
 
 import UIKit
 
-class PhotoDescriptionTableViewCell: UITableViewCell {
-
-    static let reuseIdentifier = String(describing: PhotoDescriptionTableViewCell.self)
+class PhotoDescriptionTableViewCell: UITableViewCell, NibNameIdentifiable {
 
     struct Input {
         let likesCount: Int
@@ -17,14 +15,10 @@ class PhotoDescriptionTableViewCell: UITableViewCell {
         let description: String
     }
 
-    @IBOutlet weak var likesCountLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet private weak var likesCountLabel: UILabel!
+    @IBOutlet private weak var descriptionLabel: UILabel!
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-
-    func configure(input: Input) {
+    func configure(with input: Input) {
         likesCountLabel.text = "\(input.likesCount) To se mi líbí"
         let username = NSAttributedString(string: input.username, attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 13, weight: .semibold)])
         let description = NSAttributedString(string: " \(input.description)", attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 13, weight: .regular)])

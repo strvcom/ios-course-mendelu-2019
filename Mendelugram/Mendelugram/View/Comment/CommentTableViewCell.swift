@@ -7,9 +7,7 @@
 
 import UIKit
 
-class CommentTableViewCell: UITableViewCell {
-
-    static let reuseIdentifier = String(describing: CommentTableViewCell.self)
+class CommentTableViewCell: UITableViewCell, NibNameIdentifiable {
 
     struct Input {
         let avatar: UIImage
@@ -17,16 +15,17 @@ class CommentTableViewCell: UITableViewCell {
         let comment: String
     }
 
-    @IBOutlet weak var avatarImageView: UIImageView!
-    @IBOutlet weak var commentLabel: UILabel!
+    @IBOutlet private weak var avatarImageView: UIImageView!
+    @IBOutlet private weak var commentLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
+
         avatarImageView.layer.cornerRadius = avatarImageView.frame.width / 2
         avatarImageView.layer.masksToBounds = true
     }
 
-    func configure(input: Input) {
+    func configure(with input: Input) {
         let username = NSAttributedString(string: input.username, attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 13, weight: .semibold)])
         let comment = NSAttributedString(string: " \(input.comment)", attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 13, weight: .regular)])
         let attributedText = NSMutableAttributedString()
