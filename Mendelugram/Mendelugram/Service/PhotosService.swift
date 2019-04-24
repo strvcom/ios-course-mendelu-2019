@@ -1,5 +1,5 @@
 //
-//  PhotoService.swift
+//  PhotosService.swift
 //  Mendelugram
 //
 //  Created by Pacek on 20/04/2019.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PhotoService {
+class PhotosService: PhotosServicing {
 
     func fetchPhotos(completion: @escaping ([Photo]) -> Void) {
         // authors

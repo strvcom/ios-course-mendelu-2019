@@ -9,10 +9,9 @@ import UIKit
 
 class FeedViewController: UIViewController {
 
-    // 💩 FeedViewController zná konkrétní implementaci photoService (model vrstva)
-    private let photoService = PhotoService()
-    // 💩 FeedViewController musí držet lokální kopii dat
-    private var photos = [Photo]()
+    var coordinator: FeedCoordinator?
+
+    private let viewModel = PhotosCollectionViewModel(photosService: PhotosService())
 
     @IBOutlet private weak var tableView: UITableView!
 
@@ -21,11 +20,10 @@ class FeedViewController: UIViewController {
 
         setup()
 
-        // 💩 duplicitní kód z GridViewController
-        photoService.fetchPhotos { [weak self] photos in
-            self?.photos = photos
+        viewModel.didUpdatePhotos = { [weak self] in
             self?.tableView.reloadData()
         }
+        viewModel.updatePhotos()
     }
 
 }
@@ -44,37 +42,23 @@ private extension FeedViewController {
 extension FeedViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return photos.count
+        return viewModel.numberOfPhotos()
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let photo = photos[indexPath.row]
+        let photo = viewModel.photo(at: indexPath.row)
         let cell = tableView.dequeueReusableCell(withIdentifier: PhotoTableViewCell.identifier, for: indexPath) as! PhotoTableViewCell
-        cell.configure(
-            // 💩 FeedViewController musí umět přetavit Photo na Input pro PhotoTableViewCell
-            with: PhotoTableViewCell.Input(
-                avatar: UIImage(avatarId: photo.author.avatarId),
-                authorName: photo.author.name,
-                locationName: photo.locationName,
-                photo: UIImage(photoId: photo.photoId)
-            )
-        )
+        cell.configure(with: photo)
         return cell
     }
 
 }
 
-// 💩 duplicitní kód z GridViewController
 extension FeedViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // 💩 FeedViewController musí vědět o tom jak vytvořit PhotoDetailViewController
-        let storyboard = UIStoryboard(name: "PhotoDetail", bundle: nil)
-        let viewController = storyboard.instantiateInitialViewController() as! PhotoDetailViewController
-        viewController.hidesBottomBarWhenPushed = true
-        viewController.photo = photos[indexPath.row]
-        // 💩 FeedViewController předpokládá, že je uvnitř UINavigationController
-        navigationController?.pushViewController(viewController, animated: true)
+        let photo = viewModel.photo(at: indexPath.row)
+        coordinator?.select(photo: photo)
     }
 
 }
