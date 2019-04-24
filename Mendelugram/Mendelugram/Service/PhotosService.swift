@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PhotoService {
+class PhotosService: PhotosServicing {
 
     func fetchPhotos(completion: @escaping ([Photo]) -> Void) {
         // authors

@@ -10,7 +10,7 @@ import UIKit
 class FeedViewController: UIViewController {
 
     // 💩 FeedViewController zná konkrétní implementaci photoService (model vrstva)
-    private let photoService = PhotoService()
+    private let photoService = PhotosService()
     // 💩 FeedViewController musí držet lokální kopii dat
     private var photos = [Photo]()
 

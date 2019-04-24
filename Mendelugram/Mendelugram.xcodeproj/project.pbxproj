@@ -20,7 +20,7 @@
 		A51309E6226B4DD800027FEF /* MendeluNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51309E5226B4DD800027FEF /* MendeluNavigationController.swift */; };
 		A51309E8226B588600027FEF /* MendeluNavigationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51309E7226B588600027FEF /* MendeluNavigationItem.swift */; };
 		A51309EC226B649700027FEF /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51309EB226B649700027FEF /* Photo.swift */; };
-		A51309EE226B64A300027FEF /* PhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51309ED226B64A300027FEF /* PhotoService.swift */; };
+		A51309EE226B64A300027FEF /* PhotosService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51309ED226B64A300027FEF /* PhotosService.swift */; };
 		A51309F1226B660000027FEF /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51309F0226B660000027FEF /* Author.swift */; };
 		A51309F5226B66DD00027FEF /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51309F4226B66DD00027FEF /* Comment.swift */; };
 		A51309F8226C738400027FEF /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51309F6226C738400027FEF /* PhotoTableViewCell.swift */; };
@@ -34,6 +34,7 @@
 		A5130A0B226CECA800027FEF /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5130A09226CECA800027FEF /* CommentTableViewCell.xib */; };
 		A5130A0F226CF36000027FEF /* PhotoDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5130A0D226CF36000027FEF /* PhotoDescriptionTableViewCell.swift */; };
 		A5130A10226CF36000027FEF /* PhotoDescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5130A0E226CF36000027FEF /* PhotoDescriptionTableViewCell.xib */; };
+		A51AFECD22711AEB00F53C92 /* PhotoServicing.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51AFECC22711AEB00F53C92 /* PhotoServicing.swift */; };
 		A5467AC5226EFC4E004ABA0E /* NibNameIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5467AC4226EFC4E004ABA0E /* NibNameIdentifiable.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,7 +54,7 @@
 		A51309E5226B4DD800027FEF /* MendeluNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MendeluNavigationController.swift; sourceTree = "<group>"; };
 		A51309E7226B588600027FEF /* MendeluNavigationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MendeluNavigationItem.swift; sourceTree = "<group>"; };
 		A51309EB226B649700027FEF /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
-		A51309ED226B64A300027FEF /* PhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoService.swift; sourceTree = "<group>"; };
+		A51309ED226B64A300027FEF /* PhotosService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosService.swift; sourceTree = "<group>"; };
 		A51309F0226B660000027FEF /* Author.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
 		A51309F4226B66DD00027FEF /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		A51309F6226C738400027FEF /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
@@ -67,6 +68,7 @@
 		A5130A09226CECA800027FEF /* CommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
 		A5130A0D226CF36000027FEF /* PhotoDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		A5130A0E226CF36000027FEF /* PhotoDescriptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoDescriptionTableViewCell.xib; sourceTree = "<group>"; };
+		A51AFECC22711AEB00F53C92 /* PhotoServicing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoServicing.swift; sourceTree = "<group>"; };
 		A5467AC4226EFC4E004ABA0E /* NibNameIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibNameIdentifiable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,6 +104,7 @@
 			children = (
 				A5130A06226CEBF900027FEF /* Application */,
 				A51309DD226B475C00027FEF /* Shared */,
+				A51AFECB22711AD400F53C92 /* Service */,
 				A51309CD226B41CB00027FEF /* Model */,
 				A51309CF226B41D600027FEF /* ViewController */,
 				A51309CE226B41D000027FEF /* View */,
@@ -115,7 +118,6 @@
 				A51309EB226B649700027FEF /* Photo.swift */,
 				A51309F0226B660000027FEF /* Author.swift */,
 				A51309F4226B66DD00027FEF /* Comment.swift */,
-				A51309ED226B64A300027FEF /* PhotoService.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -253,6 +255,15 @@
 			path = PhotoDescription;
 			sourceTree = "<group>";
 		};
+		A51AFECB22711AD400F53C92 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				A51AFECC22711AEB00F53C92 /* PhotoServicing.swift */,
+				A51309ED226B64A300027FEF /* PhotosService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		A5467AC3226EFC3A004ABA0E /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
@@ -348,10 +359,11 @@
 				A51309D1226B447C00027FEF /* FeedViewController.swift in Sources */,
 				A51309BC226B404300027FEF /* AppDelegate.swift in Sources */,
 				A51309F8226C738400027FEF /* PhotoTableViewCell.swift in Sources */,
-				A51309EE226B64A300027FEF /* PhotoService.swift in Sources */,
+				A51309EE226B64A300027FEF /* PhotosService.swift in Sources */,
 				A5130A0F226CF36000027FEF /* PhotoDescriptionTableViewCell.swift in Sources */,
 				A5467AC5226EFC4E004ABA0E /* NibNameIdentifiable.swift in Sources */,
 				A5130A0A226CECA800027FEF /* CommentTableViewCell.swift in Sources */,
+				A51AFECD22711AEB00F53C92 /* PhotoServicing.swift in Sources */,
 				A51309F5226B66DD00027FEF /* Comment.swift in Sources */,
 				A51309FF226CA1CE00027FEF /* PhotoCollectionViewCell.swift in Sources */,
 				A51309FB226C8E6400027FEF /* UIImage.swift in Sources */,

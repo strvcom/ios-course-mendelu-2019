@@ -10,7 +10,7 @@ import UIKit
 class GridViewController: UIViewController {
 
     // 💩 GridViewController zná konkrétní implementaci photoService (model vrstva)
-    private let photoService = PhotoService()
+    private let photoService = PhotosService()
     // 💩 GridViewController musí držet lokální kopii dat
     private var photos = [Photo]()
 
