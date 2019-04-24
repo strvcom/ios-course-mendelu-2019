@@ -19,7 +19,7 @@ class GridViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        configure()
+        setup()
 
         // 💩 duplicitní kód z FeedViewController
         photoService.fetchPhotos { [weak self] photos in
@@ -32,7 +32,7 @@ class GridViewController: UIViewController {
 
 private extension GridViewController {
 
-    func configure() {
+    func setup() {
         let photosPerRow = 3
         let side = (Int(UIScreen.main.bounds.width) / photosPerRow) - 1
         if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {

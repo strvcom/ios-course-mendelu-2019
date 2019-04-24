@@ -1,1 +1,3 @@
-# ios-course-mendelu-2019
+# Mendelugram
+
+Demo app to demonstrate transition from MVC to MVVM+C architecture.

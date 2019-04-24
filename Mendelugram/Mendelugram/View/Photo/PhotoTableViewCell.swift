@@ -24,9 +24,7 @@ class PhotoTableViewCell: UITableViewCell, NibNameIdentifiable {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        selectionStyle = .none
-        avatarImageView.layer.masksToBounds = true
-        avatarImageView.layer.cornerRadius = avatarImageView.frame.width / 2
+        setup()
     }
 
     func configure(with input: Input) {
@@ -35,6 +33,16 @@ class PhotoTableViewCell: UITableViewCell, NibNameIdentifiable {
         locationNameLabel.text = input.locationName
         locationNameLabel.isHidden = input.locationName == nil
         photoImageView.image = input.photo
+    }
+
+}
+
+private extension PhotoTableViewCell {
+
+    func setup() {
+        selectionStyle = .none
+        avatarImageView.layer.masksToBounds = true
+        avatarImageView.layer.cornerRadius = avatarImageView.frame.width / 2
     }
 
 }

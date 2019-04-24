@@ -21,8 +21,7 @@ class CommentTableViewCell: UITableViewCell, NibNameIdentifiable {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        avatarImageView.layer.cornerRadius = avatarImageView.frame.width / 2
-        avatarImageView.layer.masksToBounds = true
+        setup()
     }
 
     func configure(with input: Input) {
@@ -35,4 +34,13 @@ class CommentTableViewCell: UITableViewCell, NibNameIdentifiable {
         avatarImageView.image = input.avatar
     }
     
+}
+
+private extension CommentTableViewCell {
+
+    func setup() {
+        avatarImageView.layer.cornerRadius = avatarImageView.frame.width / 2
+        avatarImageView.layer.masksToBounds = true
+    }
+
 }

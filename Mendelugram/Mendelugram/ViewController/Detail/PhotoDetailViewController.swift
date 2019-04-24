@@ -22,14 +22,14 @@ class PhotoDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        configure()
+        setup()
     }
 
 }
 
 private extension PhotoDetailViewController {
 
-    func configure() {
+    func setup() {
         title = "\(photo.author.username)'s photo"
         tableView.rowHeight = UITableView.automaticDimension
         tableView.register(PhotoTableViewCell.nib, forCellReuseIdentifier: PhotoTableViewCell.identifier)

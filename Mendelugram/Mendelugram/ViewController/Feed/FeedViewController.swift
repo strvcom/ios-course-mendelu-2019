@@ -19,7 +19,7 @@ class FeedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        configure()
+        setup()
 
         // 💩 duplicitní kód z GridViewController
         photoService.fetchPhotos { [weak self] photos in
@@ -32,7 +32,7 @@ class FeedViewController: UIViewController {
 
 private extension FeedViewController {
 
-    func configure() {
+    func setup() {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.register(PhotoTableViewCell.nib, forCellReuseIdentifier: PhotoTableViewCell.identifier)
         tableView.delegate = self

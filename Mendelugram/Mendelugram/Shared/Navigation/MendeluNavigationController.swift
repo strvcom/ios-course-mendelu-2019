@@ -12,14 +12,14 @@ class MendeluNavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        configure()
+        setup()
     }
 
 }
 
 private extension MendeluNavigationController {
 
-    func configure() {
+    func setup() {
         navigationBar.tintColor = UIColor.contrastGray
         navigationBar.isTranslucent = false
     }
