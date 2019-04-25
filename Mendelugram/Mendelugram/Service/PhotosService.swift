@@ -1,5 +1,5 @@
 //
-//  PhotoService.swift
+//  PhotosService.swift
 //  Mendelugram
 //
 //  Created by Pacek on 20/04/2019.
@@ -25,10 +25,22 @@ class PhotosService: PhotosServicing {
         // photos
         let photos = [
             Photo(
+                author: taylor,
+                likesCount: 98764567,
+                description: "A tree 🌲.",
+                locationName: "Forest",
+                comments: [
+                    Comment(text: "STAND BY TO GET SOME.", author: jacko),
+                    Comment(text: "??", author: rock),
+                    Comment(text: "Say hello to Chandler!", author: jennifer),
+                ],
+                photoId: "taylor-1"
+            ),
+            Photo(
                 author: tmbk,
                 likesCount: 456789,
                 description: "Hotovo. Pokud by to nějaký fanda chtěl v tiskové kvalitě, jakože na transparent nebo si to vytisknout jako prachy a normálně s tím platit, napište zprávu. :-) #tmbk #jaromirjagr #kolaznaprani",
-                locationName: nil,
+                locationName: "Kladno",
                 comments: [
                     Comment(text: "In publishing and graphic design, lorem ipsum is common placeholder text used to demonstrate the graphic elements of a document or visual presentation, such as web pages, typography, and graphical layout. It is a form of \"greeking\".", author: kanye),
                     Comment(text: "Even though using \"lorem ipsum\" often arouses curiosity due to its resemblance to classical Latin, it is not intended to have meaning. Where text is visible in a document, people tend to focus on the textual content rather than upon overall presentation, so publishers use lorem ipsum when displaying a typeface or design in order to direct the focus to presentation. \"Lorem ipsum\" also approximates a typical distribution of letters in English.", author: oprah)
@@ -39,21 +51,13 @@ class PhotosService: PhotosServicing {
                 author: dan,
                 likesCount: 14678567,
                 description: "Just the essentials",
-                locationName: nil,
+                locationName: "SF",
                 comments: [],
                 photoId: "dan-1"
             ),
             Photo(
-                author: taylor,
-                likesCount: 14678567,
-                description: "A tree 🌲.",
-                locationName: "Forest",
-                comments: [],
-                photoId: "taylor-1"
-            ),
-            Photo(
                 author: rock,
-                likesCount: 14678567,
+                likesCount: 467987,
                 description: "Last men standing. \nHOBBS & SHAW is officially wrapped. \nEasily the most challenging film I’ve ever produced and starred in, however based on the fans’ insanely hyped “break the internet” reactions to our first trailer — this film is also shaping up to be my most rewarding. \nA HUGE bald and brotherly MAHALO to the man who trusted me and our chemistry and “pushed all his chips in” to make something bad ass and fun for the fans. \nMy uso @jasonstatham. \nHe’s one legit talented and tough bastard and the pure joy I got from making him laugh so fucking hard during the our takes he couldn’t even talk, I will always remember with evil 😈 glee. \nFinally, one of the best heli pilots in the world @fred_north demonstrating here our extreme commitment we all had to deliver the goods to our worldwide audience. \n#ThatsAWrap #LastMenStanding #AllChipsIn \n#HOBBSANDSHAW AUGUST 2nd \n@sevenbucksprod",
                 locationName: nil,
                 comments: [],
@@ -61,16 +65,16 @@ class PhotosService: PhotosServicing {
             ),
             Photo(
                 author: casey,
-                likesCount: 14678567,
-                description: "bla bla bla",
-                locationName: nil,
+                likesCount: 34568567,
+                description: "We take ⛷ very seriously",
+                locationName: "NYC",
                 comments: [],
                 photoId: "casey-2"
             ),
             Photo(
                 author: jacko,
-                likesCount: 14678567,
-                description: "bla bla bla",
+                likesCount: 8567,
+                description: "STAND BY TO GET SOME.",
                 locationName: nil,
                 comments: [],
                 photoId: "jacko-1"
@@ -78,14 +82,14 @@ class PhotosService: PhotosServicing {
             Photo(
                 author: kanye,
                 likesCount: 14678567,
-                description: "bla bla bla",
+                description: "Tap tap tap.",
                 locationName: nil,
                 comments: [],
                 photoId: "kanye-1"
             ),
             Photo(
                 author: oprah,
-                likesCount: 14678567,
+                likesCount: 345678,
                 description: "bla bla bla",
                 locationName: nil,
                 comments: [],
@@ -93,7 +97,7 @@ class PhotosService: PhotosServicing {
             ),
             Photo(
                 author: jennifer,
-                likesCount: 14678567,
+                likesCount: 987654,
                 description: "bla bla bla",
                 locationName: nil,
                 comments: [],
@@ -101,7 +105,7 @@ class PhotosService: PhotosServicing {
             ),
             Photo(
                 author: casey,
-                likesCount: 14678567,
+                likesCount: 6543298,
                 description: "bla bla bla",
                 locationName: nil,
                 comments: [],
@@ -109,15 +113,17 @@ class PhotosService: PhotosServicing {
             ),
             Photo(
                 author: selena,
-                likesCount: 14678567,
+                likesCount: 876543,
                 description: "bla bla bla",
                 locationName: nil,
-                comments: [],
+                comments: [
+                    Comment(text: "YO Selena, grow up!", author: kanye)
+                ],
                 photoId: "selena-1"
             ),
             Photo(
                 author: rock,
-                likesCount: 14678567,
+                likesCount: 456789,
                 description: "bla bla bla",
                 locationName: nil,
                 comments: [],
@@ -125,7 +131,7 @@ class PhotosService: PhotosServicing {
             ),
             Photo(
                 author: selena,
-                likesCount: 14678567,
+                likesCount: 6543234567,
                 description: "bla bla bla",
                 locationName: nil,
                 comments: [],
@@ -133,7 +139,7 @@ class PhotosService: PhotosServicing {
             ),
             Photo(
                 author: taylor,
-                likesCount: 14678567,
+                likesCount: 987654,
                 description: "bla bla bla",
                 locationName: nil,
                 comments: [],
@@ -141,7 +147,7 @@ class PhotosService: PhotosServicing {
             ),
             Photo(
                 author: selena,
-                likesCount: 14678567,
+                likesCount: 3456789,
                 description: "bla bla bla",
                 locationName: nil,
                 comments: [],
@@ -149,7 +155,7 @@ class PhotosService: PhotosServicing {
             ),
             Photo(
                 author: tmbk,
-                likesCount: 14678567,
+                likesCount: 987654,
                 description: "bla bla bla",
                 locationName: nil,
                 comments: [
@@ -159,7 +165,7 @@ class PhotosService: PhotosServicing {
             ),
             Photo(
                 author: taylor,
-                likesCount: 14678567,
+                likesCount: 65432,
                 description: "bla bla bla",
                 locationName: nil,
                 comments: [],
@@ -167,7 +173,7 @@ class PhotosService: PhotosServicing {
             ),
             Photo(
                 author: rock,
-                likesCount: 14678567,
+                likesCount: 9876543,
                 description: "bla bla bla",
                 locationName: nil,
                 comments: [],
@@ -175,7 +181,7 @@ class PhotosService: PhotosServicing {
             ),
             Photo(
                 author: casey,
-                likesCount: 14678567,
+                likesCount: 76543,
                 description: "bla bla bla",
                 locationName: nil,
                 comments: [],
