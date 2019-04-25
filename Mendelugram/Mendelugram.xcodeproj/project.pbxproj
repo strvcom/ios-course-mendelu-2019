@@ -47,6 +47,8 @@
 		A51AFEC22271125F00F53C92 /* PhotoDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51AFEC12271125F00F53C92 /* PhotoDetailCoordinator.swift */; };
 		A51AFEC42271136A00F53C92 /* FeedCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51AFEC32271136A00F53C92 /* FeedCoordinator.swift */; };
 		A51AFEC82271157B00F53C92 /* GridCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51AFEC72271157B00F53C92 /* GridCoordinator.swift */; };
+		A51AFED0227190F100F53C92 /* DependencyResolving.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51AFECF227190F100F53C92 /* DependencyResolving.swift */; };
+		A51AFED2227190FF00F53C92 /* DefaultDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51AFED1227190FF00F53C92 /* DefaultDependencyContainer.swift */; };
 		A5467AC5226EFC4E004ABA0E /* NibNameIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5467AC4226EFC4E004ABA0E /* NibNameIdentifiable.swift */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +95,8 @@
 		A51AFEC12271125F00F53C92 /* PhotoDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailCoordinator.swift; sourceTree = "<group>"; };
 		A51AFEC32271136A00F53C92 /* FeedCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCoordinator.swift; sourceTree = "<group>"; };
 		A51AFEC72271157B00F53C92 /* GridCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCoordinator.swift; sourceTree = "<group>"; };
+		A51AFECF227190F100F53C92 /* DependencyResolving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyResolving.swift; sourceTree = "<group>"; };
+		A51AFED1227190FF00F53C92 /* DefaultDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDependencyContainer.swift; sourceTree = "<group>"; };
 		A5467AC4226EFC4E004ABA0E /* NibNameIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibNameIdentifiable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -128,6 +132,7 @@
 			children = (
 				A5130A06226CEBF900027FEF /* Application */,
 				A51309DD226B475C00027FEF /* Shared */,
+				A51AFECE227190D800F53C92 /* DI */,
 				A51AFEBC2271117500F53C92 /* Coordinator */,
 				A51AFEB922710C7000F53C92 /* Service */,
 				A51309CD226B41CB00027FEF /* Model */,
@@ -348,6 +353,15 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
+		A51AFECE227190D800F53C92 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				A51AFECF227190F100F53C92 /* DependencyResolving.swift */,
+				A51AFED1227190FF00F53C92 /* DefaultDependencyContainer.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
 		A5467AC3226EFC3A004ABA0E /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
@@ -436,6 +450,7 @@
 				A51AFEB22271060F00F53C92 /* CommentViewModel.swift in Sources */,
 				A51AFEC22271125F00F53C92 /* PhotoDetailCoordinator.swift in Sources */,
 				A51309EC226B649700027FEF /* Photo.swift in Sources */,
+				A51AFED2227190FF00F53C92 /* DefaultDependencyContainer.swift in Sources */,
 				A51309E3226B4C4E00027FEF /* UIColor.swift in Sources */,
 				A51AFEC82271157B00F53C92 /* GridCoordinator.swift in Sources */,
 				A51309DC226B45A200027FEF /* GridViewController.swift in Sources */,
@@ -445,6 +460,7 @@
 				A51309E8226B588600027FEF /* MendeluNavigationItem.swift in Sources */,
 				A51AFEA62270FF4B00F53C92 /* PhotosCollectionViewModeling.swift in Sources */,
 				A51AFEC42271136A00F53C92 /* FeedCoordinator.swift in Sources */,
+				A51AFED0227190F100F53C92 /* DependencyResolving.swift in Sources */,
 				A51AFEB82271087700F53C92 /* PhotosCollectionViewModel.swift in Sources */,
 				A51309D1226B447C00027FEF /* FeedViewController.swift in Sources */,
 				A51309BC226B404300027FEF /* AppDelegate.swift in Sources */,

@@ -9,8 +9,14 @@ import UIKit
 
 class RootCoordinator: Coordinating {
 
+    private let resolver: DependencyResolving
+
+    init(resolver: DependencyResolving) {
+        self.resolver = resolver
+    }
+
     func begin() -> UIViewController {
-        let tabBarController = createRootViewController()
+        let tabBarController = resolver.resolveMainTabBarController()
         tabBarController.viewControllers = [
             beginFeed(),
             beginGrid()
@@ -22,14 +28,9 @@ class RootCoordinator: Coordinating {
 
 private extension RootCoordinator {
 
-    func createRootViewController() -> UITabBarController {
-        let storyboard = UIStoryboard(name: "MainTabBar", bundle: nil)
-        return storyboard.instantiateInitialViewController() as! UITabBarController
-    }
-
     func beginFeed() -> UIViewController {
         let navController = MendeluNavigationController()
-        let coordinator = FeedCoordinator(navController: navController)
+        let coordinator = FeedCoordinator(navController: navController, resolver: resolver)
         let viewController = coordinator.begin()
         navController.viewControllers = [viewController]
         return navController
@@ -37,7 +38,7 @@ private extension RootCoordinator {
 
     func beginGrid() -> UIViewController {
         let navController = MendeluNavigationController()
-        let coordinator = GridCoordinator(navController: navController)
+        let coordinator = GridCoordinator(navController: navController, resolver: resolver)
         let viewController = coordinator.begin()
         navController.viewControllers = [viewController]
         return navController

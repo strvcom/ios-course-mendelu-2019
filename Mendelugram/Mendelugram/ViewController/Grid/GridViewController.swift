@@ -10,8 +10,7 @@ import UIKit
 class GridViewController: UIViewController {
 
     var coordinator: GridCoordinator?
-
-    private let viewModel = PhotosCollectionViewModel(photosService: PhotosService())
+    var viewModel: PhotosCollectionViewModeling!
 
     @IBOutlet private weak var collectionView: UICollectionView!
 

@@ -10,31 +10,21 @@ import UIKit
 class PhotoDetailCoordinator: Coordinating {
 
     private let viewModel: PhotoViewModeling
+    private let resolver: DependencyResolving
 
-    init(viewModel: PhotoViewModeling) {
+    init(viewModel: PhotoViewModeling, resolver: DependencyResolving) {
         self.viewModel = viewModel
+        self.resolver = resolver
     }
 
     func begin() -> UIViewController {
-        let viewController = createPhotoDetailViewController()
+        let viewController = resolver.resolvePhotoDetailViewController(viewModel: viewModel)
         viewController.coordinator = self
         return viewController
     }
 
     deinit {
         print("PhotoDetailCoordinator deinit")
-    }
-
-}
-
-private extension PhotoDetailCoordinator {
-
-    func createPhotoDetailViewController() -> PhotoDetailViewController {
-        let storyboard = UIStoryboard(name: "PhotoDetail", bundle: nil)
-        let viewController = storyboard.instantiateInitialViewController() as! PhotoDetailViewController
-        viewController.hidesBottomBarWhenPushed = true
-        viewController.viewModel = viewModel
-        return viewController
     }
 
 }

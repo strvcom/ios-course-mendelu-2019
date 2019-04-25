@@ -10,8 +10,7 @@ import UIKit
 class FeedViewController: UIViewController {
 
     var coordinator: FeedCoordinator?
-
-    private let viewModel = PhotosCollectionViewModel(photosService: PhotosService())
+    var viewModel: PhotosCollectionViewModeling!
 
     @IBOutlet private weak var tableView: UITableView!
 
