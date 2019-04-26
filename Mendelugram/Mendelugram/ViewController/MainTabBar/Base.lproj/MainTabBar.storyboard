@@ -18,40 +18,10 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
-                    <connections>
-                        <segue destination="z1n-QK-101" kind="relationship" relationship="viewControllers" id="BpL-Mm-w19"/>
-                        <segue destination="5y1-rP-VMq" kind="relationship" relationship="viewControllers" id="AiU-bn-Zhl"/>
-                    </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mxu-qz-2UQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-393" y="-3"/>
         </scene>
-        <!--Feed-->
-        <scene sceneID="MGu-co-t9Q">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Feed" id="z1n-QK-101" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Feed" image="feed-tab-bar-icon" selectedImage="feed-tab-bar-icon-selected" id="Bgi-sV-TeZ"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OlF-qL-caQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="497" y="-114"/>
-        </scene>
-        <!--Grid-->
-        <scene sceneID="PY3-Yd-eik">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Grid" id="5y1-rP-VMq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Grid" image="grid-tab-bar-icon" selectedImage="grid-tab-bar-icon-selected" id="6At-pX-c6F"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="51b-F6-1lR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="500" y="106"/>
-        </scene>
     </scenes>
-    <resources>
-        <image name="feed-tab-bar-icon" width="24" height="24"/>
-        <image name="feed-tab-bar-icon-selected" width="24" height="24"/>
-        <image name="grid-tab-bar-icon" width="24" height="24"/>
-        <image name="grid-tab-bar-icon-selected" width="24" height="24"/>
-    </resources>
 </document>

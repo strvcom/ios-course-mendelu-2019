@@ -9,10 +9,8 @@ import UIKit
 
 class GridViewController: UIViewController {
 
-    // 💩 GridViewController zná konkrétní implementaci photoService (model vrstva)
-    private let photoService = PhotosService()
-    // 💩 GridViewController musí držet lokální kopii dat
-    private var photos = [Photo]()
+    var coordinator: GridCoordinator?
+    var viewModel: PhotosCollectionViewModeling!
 
     @IBOutlet private weak var collectionView: UICollectionView!
 
@@ -21,11 +19,10 @@ class GridViewController: UIViewController {
 
         setup()
 
-        // 💩 duplicitní kód z FeedViewController
-        photoService.fetchPhotos { [weak self] photos in
-            self?.photos = photos
+        viewModel.didUpdatePhotos = { [weak self] in
             self?.collectionView.reloadData()
         }
+        viewModel.updatePhotos()
     }
 
 }
@@ -51,18 +48,13 @@ private extension GridViewController {
 extension GridViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return photos.count
+        return viewModel.numberOfPhotos()
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let photo = photos[indexPath.row]
+        let photo = viewModel.photo(at: indexPath.item)
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.identifier, for: indexPath) as! PhotoCollectionViewCell
-        cell.configure(
-            with: PhotoCollectionViewCell.Input(
-                // 💩 GridViewController musí umět přetavit photoId na UIImage
-                photo: UIImage(photoId: photo.photoId)
-            )
-        )
+        cell.configure(with: photo)
         return cell
     }
 
@@ -70,15 +62,9 @@ extension GridViewController: UICollectionViewDataSource {
 
 extension GridViewController: UICollectionViewDelegate {
 
-    // 💩 duplicitní kód z FeedViewController
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // 💩 GridViewController musí vědět o tom jak vytvořit PhotoDetailViewController
-        let storyboard = UIStoryboard(name: "PhotoDetail", bundle: nil)
-        let viewController = storyboard.instantiateInitialViewController() as! PhotoDetailViewController
-        viewController.hidesBottomBarWhenPushed = true
-        viewController.photo = photos[indexPath.row]
-        // 💩 GridViewController předpokládá, že je uvnitř UINavigationController
-        navigationController?.pushViewController(viewController, animated: true)
+        let photo = viewModel.photo(at: indexPath.item)
+        coordinator?.select(photo: photo)
     }
 
 }
