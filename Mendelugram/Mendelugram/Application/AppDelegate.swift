@@ -11,12 +11,13 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var rootCoordinator: RootCoordinator?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let rootViewController = UIStoryboard(name: "MainTabBar", bundle: nil).instantiateInitialViewController()
+        rootCoordinator = RootCoordinator(resolver: DefaultDependencyContainer())
 
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = rootViewController
+        window?.rootViewController = rootCoordinator?.begin()
         window?.makeKeyAndVisible()
         return true
     }
