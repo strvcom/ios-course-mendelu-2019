@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		81D05793227633C700AB7712 /* MendelugramTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D05792227633C700AB7712 /* MendelugramTests.swift */; };
 		81D057A1227633D600AB7712 /* MendelugramUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D057A0227633D600AB7712 /* MendelugramUITests.swift */; };
+		81D057A92276346E00AB7712 /* PhotosCollectionViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D057A82276346E00AB7712 /* PhotosCollectionViewModelTests.swift */; };
+		81D057B02276455400AB7712 /* PhotosServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D057AF2276455400AB7712 /* PhotosServiceTest.swift */; };
+		81D057B2227646F400AB7712 /* PhotoViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D057B1227646F400AB7712 /* PhotoViewModelTests.swift */; };
 		A51309BC226B404300027FEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51309BB226B404300027FEF /* AppDelegate.swift */; };
 		A51309C1226B404300027FEF /* MainTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A51309BF226B404300027FEF /* MainTabBar.storyboard */; };
 		A51309C3226B404500027FEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A51309C2226B404500027FEF /* Assets.xcassets */; };
