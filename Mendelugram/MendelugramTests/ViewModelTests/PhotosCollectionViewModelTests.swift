@@ -26,7 +26,6 @@ import XCTest
 class PhotosCollectionViewModelTests: XCTestCase {
 
     // MARK: - Constants (static)
-    
     private struct Constants {
         
         static private let casey = Author(username: "caseyneistat", name: "Casey Neistat", avatarId: "casey")
@@ -59,7 +58,6 @@ class PhotosCollectionViewModelTests: XCTestCase {
     }
     
     // MARK: - Mock Service
-    
     private struct MockPhotosService: PhotosServicing {
         
         var photos = [Photo]()
@@ -71,9 +69,9 @@ class PhotosCollectionViewModelTests: XCTestCase {
     }
     
     // MARK: - Variables
-    
     private var mockPhotosService = MockPhotosService()
     
+    // MARK: - Set Up
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         

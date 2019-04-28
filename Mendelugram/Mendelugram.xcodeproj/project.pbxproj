@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		81D057A1227633D600AB7712 /* MendelugramUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D057A0227633D600AB7712 /* MendelugramUITests.swift */; };
+		81AB876722765215001BBEE4 /* GridViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AB876622765215001BBEE4 /* GridViewControllerTests.swift */; };
+		81AB876922765C0C001BBEE4 /* XCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AB876822765C0C001BBEE4 /* XCTestCase.swift */; };
+		81AB876C22765C57001BBEE4 /* MainTabBarViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AB876B22765C57001BBEE4 /* MainTabBarViewControllerTests.swift */; };
 		81D057A92276346E00AB7712 /* PhotosCollectionViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D057A82276346E00AB7712 /* PhotosCollectionViewModelTests.swift */; };
 		81D057B02276455400AB7712 /* PhotosServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D057AF2276455400AB7712 /* PhotosServiceTest.swift */; };
 		81D057B2227646F400AB7712 /* PhotoViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D057B1227646F400AB7712 /* PhotoViewModelTests.swift */; };
+		81D057B422764C6200AB7712 /* FeedViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D057B322764C6200AB7712 /* FeedViewControllerTests.swift */; };
 		A51309BC226B404300027FEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51309BB226B404300027FEF /* AppDelegate.swift */; };
 		A51309C1226B404300027FEF /* MainTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A51309BF226B404300027FEF /* MainTabBar.storyboard */; };
 		A51309C3226B404500027FEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A51309C2226B404500027FEF /* Assets.xcassets */; };
@@ -74,12 +77,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		81AB876622765215001BBEE4 /* GridViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridViewControllerTests.swift; sourceTree = "<group>"; };
+		81AB876822765C0C001BBEE4 /* XCTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestCase.swift; sourceTree = "<group>"; };
+		81AB876B22765C57001BBEE4 /* MainTabBarViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewControllerTests.swift; sourceTree = "<group>"; };
 		81D05790227633C700AB7712 /* MendelugramTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MendelugramTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		81D05792227633C700AB7712 /* MendelugramTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MendelugramTests.swift; sourceTree = "<group>"; };
 		81D05794227633C700AB7712 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81D0579E227633D600AB7712 /* MendelugramUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MendelugramUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		81D057A0227633D600AB7712 /* MendelugramUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MendelugramUITests.swift; sourceTree = "<group>"; };
 		81D057A2227633D600AB7712 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		81D057A82276346E00AB7712 /* PhotosCollectionViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewModelTests.swift; sourceTree = "<group>"; };
+		81D057AF2276455400AB7712 /* PhotosServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosServiceTest.swift; sourceTree = "<group>"; };
+		81D057B1227646F400AB7712 /* PhotoViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModelTests.swift; sourceTree = "<group>"; };
+		81D057B322764C6200AB7712 /* FeedViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewControllerTests.swift; sourceTree = "<group>"; };
 		A51309B8226B404300027FEF /* Mendelugram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mendelugram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A51309BB226B404300027FEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A51309C0226B404300027FEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainTabBar.storyboard; sourceTree = "<group>"; };
@@ -153,11 +161,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		81AB876A22765C11001BBEE4 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				81AB876822765C0C001BBEE4 /* XCTestCase.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		81D05791227633C700AB7712 /* MendelugramTests */ = {
 			isa = PBXGroup;
 			children = (
-				81D05792227633C700AB7712 /* MendelugramTests.swift */,
+				81D057AE2276453000AB7712 /* ServiceTests */,
 				81D05794227633C700AB7712 /* Info.plist */,
+				81D057AD2276451B00AB7712 /* ViewModelTests */,
 			);
 			path = MendelugramTests;
 			sourceTree = "<group>";
@@ -165,10 +182,30 @@
 		81D0579F227633D600AB7712 /* MendelugramUITests */ = {
 			isa = PBXGroup;
 			children = (
-				81D057A0227633D600AB7712 /* MendelugramUITests.swift */,
 				81D057A2227633D600AB7712 /* Info.plist */,
+				81D057B322764C6200AB7712 /* FeedViewControllerTests.swift */,
+				81AB876622765215001BBEE4 /* GridViewControllerTests.swift */,
+				81AB876B22765C57001BBEE4 /* MainTabBarViewControllerTests.swift */,
+				81AB876A22765C11001BBEE4 /* Extension */,
 			);
 			path = MendelugramUITests;
+			sourceTree = "<group>";
+		};
+		81D057AD2276451B00AB7712 /* ViewModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				81D057A82276346E00AB7712 /* PhotosCollectionViewModelTests.swift */,
+				81D057B1227646F400AB7712 /* PhotoViewModelTests.swift */,
+			);
+			path = ViewModelTests;
+			sourceTree = "<group>";
+		};
+		81D057AE2276453000AB7712 /* ServiceTests */ = {
+			isa = PBXGroup;
+			children = (
+				81D057AF2276455400AB7712 /* PhotosServiceTest.swift */,
+			);
+			path = ServiceTests;
 			sourceTree = "<group>";
 		};
 		A51309AF226B404300027FEF = {
@@ -580,7 +617,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81D05793227633C700AB7712 /* MendelugramTests.swift in Sources */,
+				81D057B02276455400AB7712 /* PhotosServiceTest.swift in Sources */,
+				81D057A92276346E00AB7712 /* PhotosCollectionViewModelTests.swift in Sources */,
+				81D057B2227646F400AB7712 /* PhotoViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,7 +627,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81D057A1227633D600AB7712 /* MendelugramUITests.swift in Sources */,
+				81D057B422764C6200AB7712 /* FeedViewControllerTests.swift in Sources */,
+				81AB876C22765C57001BBEE4 /* MainTabBarViewControllerTests.swift in Sources */,
+				81AB876922765C0C001BBEE4 /* XCTestCase.swift in Sources */,
+				81AB876722765215001BBEE4 /* GridViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
