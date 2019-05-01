@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		81AB876F2279BE4D001BBEE4 /* XCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AB876E2279BE4D001BBEE4 /* XCTestCase.swift */; };
 		A51309BC226B404300027FEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51309BB226B404300027FEF /* AppDelegate.swift */; };
 		A51309C1226B404300027FEF /* MainTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A51309BF226B404300027FEF /* MainTabBar.storyboard */; };
 		A51309C3226B404500027FEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A51309C2226B404500027FEF /* Assets.xcassets */; };
@@ -53,6 +54,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		81AB876E2279BE4D001BBEE4 /* XCTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestCase.swift; sourceTree = "<group>"; };
 		A51309B8226B404300027FEF /* Mendelugram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mendelugram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A51309BB226B404300027FEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A51309C0226B404300027FEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainTabBar.storyboard; sourceTree = "<group>"; };
@@ -112,10 +114,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		81AB876D2279BE4D001BBEE4 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				81AB876E2279BE4D001BBEE4 /* XCTestCase.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		A51309AF226B404300027FEF = {
 			isa = PBXGroup;
 			children = (
 				A51309BA226B404300027FEF /* Mendelugram */,
+				81AB876D2279BE4D001BBEE4 /* Extension */,
 				A51309B9226B404300027FEF /* Products */,
 				A5CD7FE22272F5AB0051D65D /* Recovered References */,
 			);
@@ -457,6 +468,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81AB876F2279BE4D001BBEE4 /* XCTestCase.swift in Sources */,
 				A51AFEB22271060F00F53C92 /* CommentViewModel.swift in Sources */,
 				A51AFEC22271125F00F53C92 /* PhotoDetailCoordinator.swift in Sources */,
 				A51309EC226B649700027FEF /* Photo.swift in Sources */,
