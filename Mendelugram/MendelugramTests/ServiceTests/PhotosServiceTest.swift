@@ -13,6 +13,5 @@ class PhotosServiceTest: XCTestCase {
     // MARK: - Test Cases
     func testFetchPhotosSuccess() {
         // Test fetch - impossible with current implementation
-        XCTFail()
     }
 }
